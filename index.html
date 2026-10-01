@@ -415,6 +415,495 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 /* SOFT PORTRAIT FLOAT */
 .photo-frame{animation:softFloat 5s ease-in-out infinite}
 @keyframes softFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+/* =========================
+   MOBILE / TABLET FIXES
+   Desktop design above remains unchanged.
+   ========================= */
+
+/* Prevent accidental horizontal overflow */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Tablet */
+@media (max-width: 960px) {
+  #hero {
+    min-height: auto;
+    width: 100%;
+    grid-template-columns: 1fr;
+    padding: 7.5rem 1.5rem 4.5rem;
+    gap: 3.5rem;
+  }
+
+  .hero-text {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .photo-area {
+    width: 100%;
+    order: -1;
+  }
+
+  .photo-frame {
+    width: min(350px, 72vw);
+    height: min(430px, 88vw);
+    max-height: 430px;
+  }
+
+  .nav-search {
+    width: 120px;
+  }
+
+  section,
+  #testimonial {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .divider {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  footer {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  body {
+    min-width: 0;
+  }
+
+  nav,
+  nav.scrolled {
+    width: 100%;
+    padding: .85rem 1rem;
+    gap: .6rem;
+  }
+
+  .nav-logo {
+    font-size: 1.05rem;
+    letter-spacing: .04em;
+  }
+
+  .nav-right {
+    gap: .45rem;
+  }
+
+  .nav-search {
+    width: 42px;
+    height: 32px;
+    padding: .25rem;
+    border-radius: 18px;
+    justify-content: center;
+  }
+
+  .nav-search input {
+    display: none;
+  }
+
+  .nav-search button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .theme-btn {
+    width: 44px;
+    height: 24px;
+  }
+
+  .theme-btn::before {
+    width: 16px;
+    height: 16px;
+    top: 3px;
+    left: 3px;
+  }
+
+  [data-theme="light"] .theme-btn::before {
+    transform: translateX(20px);
+  }
+
+  #hero {
+    padding: 6.8rem 1rem 3.5rem;
+    gap: 2.8rem;
+  }
+
+  .hero-eyebrow {
+    gap: .55rem;
+    margin-bottom: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-tag {
+    font-size: .57rem;
+    letter-spacing: .14em;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 14vw, 4.3rem);
+    line-height: .98;
+    word-break: normal;
+  }
+
+  .hero-role {
+    font-size: 1.15rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero-bio {
+    font-size: .82rem;
+    line-height: 1.75;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-cta {
+    width: 100%;
+    gap: .65rem;
+  }
+
+  .btn-gold,
+  .btn-ghost {
+    flex: 1 1 100%;
+    justify-content: center;
+    width: 100%;
+    padding: .82rem 1rem;
+    font-size: .68rem;
+  }
+
+  .photo-frame {
+    width: min(280px, 72vw);
+    height: min(350px, 90vw);
+  }
+
+  .photo-frame::before {
+    top: 12px;
+    left: 12px;
+    right: -12px;
+    bottom: -12px;
+  }
+
+  .photo-badge {
+    right: -.7rem;
+    bottom: -.9rem;
+    padding: .75rem .9rem;
+  }
+
+  .photo-badge .num {
+    font-size: 1.45rem;
+  }
+
+  .photo-badge .lbl {
+    font-size: .52rem;
+  }
+
+  .marquee-wrap {
+    padding: .55rem 0;
+  }
+
+  .marquee-track span {
+    font-size: .54rem;
+    padding: 0 1.2rem;
+  }
+
+  section,
+  #testimonial {
+    padding: 4rem 1rem;
+  }
+
+  .sec-label {
+    font-size: .56rem;
+    letter-spacing: .19em;
+    gap: .65rem;
+  }
+
+  .sec-label::before {
+    width: 18px;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+    margin-bottom: 1rem;
+  }
+
+  .about-grid,
+  .contact-grid {
+    gap: 2rem;
+  }
+
+  .about-text {
+    font-size: .82rem;
+    line-height: 1.8;
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .55rem;
+    margin-top: 2rem;
+  }
+
+  .stat-card {
+    padding: 1rem .65rem;
+    text-align: center;
+  }
+
+  .stat-card .n {
+    font-size: 1.8rem;
+  }
+
+  .stat-card .l {
+    font-size: .5rem;
+    letter-spacing: .08em;
+    line-height: 1.35;
+  }
+
+  .info-card {
+    margin-top: 1.2rem;
+    padding: 1.1rem;
+  }
+
+  .info-row {
+    font-size: .75rem;
+    gap: .6rem;
+    overflow-wrap: anywhere;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: .75rem;
+    margin-top: 2rem;
+  }
+
+  .skill-item {
+    padding: 1.2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .pcard {
+    width: 100%;
+    min-width: 0;
+    border-radius: 8px;
+  }
+
+  .pcard-img,
+  .portfolio-img-slot,
+  .portfolio-img-slot img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .pcard-body {
+    padding: 1.2rem;
+  }
+
+  .pcard-title {
+    font-size: 1.25rem;
+  }
+
+  .pcard-desc {
+    font-size: .77rem;
+    line-height: 1.65;
+  }
+
+  .pcard-footer {
+    padding: .8rem 1.2rem;
+  }
+
+  .pcard-actions {
+    width: 100%;
+  }
+
+  .pcard-action {
+    min-width: 0 !important;
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  #testimonial {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  #testimonial::before {
+    font-size: 11rem;
+    top: -2rem;
+    left: -.5rem;
+  }
+
+  .testi-text {
+    font-size: 1.35rem;
+    line-height: 1.45;
+  }
+
+  .contact-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .contact-info p {
+    font-size: .8rem;
+  }
+
+  .contact-link {
+    font-size: .76rem;
+    margin: -.5rem;
+    padding: .5rem;
+  }
+
+  .contact-link-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    font-size: .8rem;
+    padding: .8rem .9rem;
+  }
+
+  #resume {
+    padding: 3.5rem 1rem;
+  }
+
+  .resume-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .resume-top {
+    padding: 1.4rem 1rem 1rem;
+  }
+
+  .resume-edu {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-block:first-child {
+    border-right: 0;
+    border-bottom: .5px solid var(--bdr);
+  }
+
+  .resume-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .res-btn-view {
+    border-right: 0;
+    border-bottom: .5px solid var(--bdr);
+  }
+
+  footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer-txt {
+    font-size: .65rem;
+    line-height: 1.6;
+  }
+
+  .footer-socials {
+    gap: .5rem;
+  }
+
+  #backToTop {
+    right: 14px;
+    bottom: 14px;
+    width: 40px;
+    height: 40px;
+    font-size: 17px;
+  }
+
+  /* Disable large hover transforms on touch screens */
+  .pcard:hover,
+  .stat-card:hover,
+  .skill-item:hover,
+  .resume-card:hover,
+  .photo-inner:hover {
+    transform: none;
+  }
+
+  .pcard:hover .pcard-img img {
+    filter: grayscale(.6) blur(3px) brightness(.55);
+    transform: scale(1.06);
+  }
+
+  .pcard-view-btn {
+    display: none;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .nav-logo {
+    font-size: .95rem;
+  }
+
+  .nav-search {
+    display: none;
+  }
+
+  #hero {
+    padding-left: .85rem;
+    padding-right: .85rem;
+  }
+
+  section,
+  #testimonial,
+  #resume {
+    padding-left: .85rem;
+    padding-right: .85rem;
+  }
+
+  .stats-row {
+    gap: .35rem;
+  }
+
+  .stat-card {
+    padding: .85rem .4rem;
+  }
+
+  .stat-card .n {
+    font-size: 1.55rem;
+  }
+
+  .photo-frame {
+    width: min(250px, 70vw);
+    height: min(315px, 88vw);
+  }
+}
+
 </style>
 </head>
 <body>
